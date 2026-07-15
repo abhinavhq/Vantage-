@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vantage — Stadium Companion</title>
+<meta name="description" content="A GenAI companion for fans and operations staff at the FIFA World Cup 2026." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<a class="skip-link" href="#composer-input">Skip to message input</a>
+
+<div class="app" data-mode="fan">
+
+  <header class="topbar">
+    <div class="wordmark" aria-hidden="true">
+      <span class="wordmark-glyph">◐</span> VANTAGE
+    </div>
+
+    <div class="mode-toggle" role="radiogroup" aria-label="Companion mode">
+      <button type="button" class="mode-btn is-active" id="mode-fan" role="radio" aria-checked="true">Fan</button>
+      <button type="button" class="mode-btn" id="mode-ops" role="radio" aria-checked="false">Ops</button>
+    </div>
+
+    <button type="button" class="icon-btn" id="contrast-toggle" aria-pressed="false" title="Toggle high contrast">
+      <span aria-hidden="true">◑</span>
+      <span class="sr-only">Toggle high contrast mode</span>
+    </button>
+  </header>
+
+  <main class="stage" id="stage-region">
+    <canvas id="avatar-canvas" width="360" height="360" role="img"
+      aria-label="Vantage assistant, currently idle"></canvas>
+
+    <p class="status-line" id="status-line">Ask me anything, in any language.</p>
+
+    <div class="alert-ticker" id="alert-ticker" aria-live="polite" hidden></div>
+  </main>
+
+  <div class="chips" id="suggestion-chips" aria-label="Suggested questions">
+    <button type="button" class="chip" data-prompt="Where's the nearest accessible gate?">Nearest accessible gate</button>
+    <button type="button" class="chip" data-prompt="How do I get to the stadium by public transport?">Getting here</button>
+    <button type="button" class="chip" data-prompt="Give me a sustainability tip for today.">Sustainability tip</button>
+    <button type="button" class="chip" data-prompt="¿Puedes ayudarme en español?">¿Hablas español?</button>
+  </div>
+
+  <section class="chat-panel" aria-label="Conversation">
+    <div class="chat-log" id="chat-log" aria-live="polite"></div>
+
+    <form class="composer" id="composer-form">
+      <button type="button" class="mic-btn" id="mic-btn" aria-pressed="false" title="Speak your question">
+        <span aria-hidden="true">🎙</span>
+        <span class="sr-only">Use voice input</span>
+      </button>
+      <label class="sr-only" for="composer-input">Type your message</label>
+      <input
+        type="text"
+        id="composer-input"
+        class="composer-input"
+        placeholder="Type a message…"
+        autocomplete="off"
+        maxlength="500"
+      />
+      <button type="submit" class="send-btn">Send</button>
+    </form>
+    <p class="composer-hint" id="composer-hint">Vantage is a hackathon prototype — crowd data shown is simulated, not live sensor data.</p>
+  </section>
+
+</div>
+
+<script src="/avatar.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>
