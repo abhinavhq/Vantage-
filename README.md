@@ -121,4 +121,4 @@ Open `http://localhost:8000`.
   instant).
 - Persist chat history per session instead of in-memory only.
 - Real amplitude-driven lip-sync for the avatar via the Web Audio API,
-  closer to the original Kage RMS-based approach.
+  closer to the original Kage RMS-based approach
