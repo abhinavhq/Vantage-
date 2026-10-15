@@ -1,5 +1,6 @@
 # Vantage — GenAI Stadium Companion
 
+
 Built for **Hack2Skill · Challenge 4: Smart Stadiums & Tournament Operations** (FIFA World Cup 2026).
 
 Vantage is one assistant with two faces. Switch modes and the same core —
